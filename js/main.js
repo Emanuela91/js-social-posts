@@ -77,7 +77,7 @@ for(let i = 0; i < posts.length; i++){
     </div>
     <div class="post__text">${postsIesimo.content} </div>
     <div class="post__image">
-        <img src="${postsIesimo.media} " alt="">
+        <img src="${postsIesimo.media}" alt="">
     </div>
     <div class="post__footer">
         <div class="likes js-likes">
@@ -99,4 +99,13 @@ console.log(element);
 
 }
 
-    
+var buttonLike = document.getElementsByClassName("js-like-button");
+var clicks = 0;
+
+buttonLike.addEventListener("click",{
+    function(){
+        
+    }
+}
+
+)
