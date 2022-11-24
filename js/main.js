@@ -56,7 +56,7 @@ const posts = [
     }
 ];
 
-// Create tutti i posts
+// Creare tutti i posts
 let active = 1;
 
 for(let i = 0; i < posts.length; i++){
@@ -82,7 +82,7 @@ for(let i = 0; i < posts.length; i++){
     <div class="post__footer">
         <div class="likes js-likes">
             <div class="likes__cta">
-                <a class="like-button  js-like-button" href="#" data-postid="1">
+                <a class="like-button  js-like-button" href="#!" data-postid="1">
                     <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
                     <span class="like-button__label">Mi Piace</span>
                 </a>
@@ -99,13 +99,29 @@ console.log(element);
 
 }
 
-var buttonLike = document.getElementsByClassName("js-like-button");
-var clicks = 0;
 
-buttonLike.addEventListener("click",{
-    function(){
-        
-    }
+// creo la funzione dei bottoni mi piace 
+let buttonLike = document.getElementsByClassName("js-like-button");
+
+
+for (let i = 0; i < buttonLike.length; i ++){
+    let buttonPost = buttonLike[i];
+
+    buttonPost.addEventListener("click",
+        function(){
+
+            // aggiungo il colore al mi piace 
+            buttonPost.classList.toggle("like-button--liked");
+
+            // aggiungo i like 
+            likeUser = posts[i].likes;
+            idUser = i + 1;
+            let counter = document.getElementById("like-counter-" + idUser);
+            counter.innerHTML = likeUser + 1;
+            
+
+            
+        }
+    
+    )
 }
-
-)
